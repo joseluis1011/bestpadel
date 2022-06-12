@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'telefono',
     ];
 
     /**
@@ -41,4 +42,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function registros(){
+        return $this->hasMany(Registros::class,  'user_id');
+    }
+    public function userTorneo(){
+        return $this->hasMany(userTorneo::class,  'user_id');
+    }
 }
