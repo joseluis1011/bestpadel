@@ -74,7 +74,7 @@ class GetRegistros extends Controller
 
         return ['pista' => $pista];
     }
-    
+
     public function getAllRegistros()
     {
         $table = DB::table('registros')->get();

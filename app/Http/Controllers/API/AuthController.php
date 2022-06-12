@@ -21,7 +21,7 @@ class AuthController extends Controller
             'name' => 'required|max:191',
             'email' => 'required|email|max:191|unique:users,email',
             'password' => 'required|min:8',
-            'telefono' => 'required|min:9|max:9'
+            'telefono' => 'required|min:9|max:9',
         ]);
 
         if ($validator->fails()) {
@@ -80,7 +80,7 @@ class AuthController extends Controller
             }
         }
     }
-    
+
     public function editarperfil(Request $request)
     {
 
@@ -107,7 +107,7 @@ class AuthController extends Controller
                 $user->lado = $request->lado;
             }
             $user->save();
-                
+
             return response()->json([
                 'status'=> 200,
                 'message'=> 'Edit realizado correctamente',
